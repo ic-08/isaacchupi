@@ -1,6 +1,6 @@
 {
-  "name": "my-worker",
+  "name": "rough-shape-9d47",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "worker.js",
   "type": "module"
 }
