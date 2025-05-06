@@ -1,2 +1,0 @@
-# isaacchupi
-Home Website Hosting
