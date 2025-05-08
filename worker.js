@@ -8,26 +8,25 @@
  * Learn more at https://developers.cloudflare.com/workers/
  */
 
-
 export default {
   async fetch(request, env, ctx) {
     const html = `
     <!DOCTYPE html>
     <html>
     <body>
+      <h2>Live Date and Time</h2>
+      <p id="demo"></p>
 
-    <h2>My First JavaScript</h2>
-
-    <button type="button"
-    onclick="document.getElementById('demo').innerHTML = Date()">
-    Click me to display Date and Time.</button>
-
-    <p id="demo"></p>
-
+      <script>
+        function updateTime() {
+          document.getElementById('demo').innerHTML = new Date().toString();
+        }
+        // Update immediately, then every 1 second
+        updateTime();
+        setInterval(updateTime, 1000);
+      </script>
     </body>
-    </html> 
-
-
+    </html>
     `;
 
     return new Response(html, {
